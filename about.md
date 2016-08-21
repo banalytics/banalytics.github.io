@@ -16,6 +16,8 @@ Newsweek and locally SME or .týždeň. In the small team I lead we use technolo
 I organize Banalytics meetup focused on analytical community in Slovakia (see facebook link below) and a MeasureCamp 
 Slovakia organizer. My formal education includes a PhD in applies stats.
 
+If you are interested in my posts on the company blog see http://piano.io/blog/category/analytics/
+
 ### Contact me
 
 [roman.gavuliak@gmail.com](roman.gavuliak@gmail.com)
