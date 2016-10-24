@@ -89,7 +89,7 @@ corrplot offers some really cool plots for correlation matrices, so my first ide
 
 If you are realizing something is gravely wrong here, you’re right. We’ve seen quite a few overlaps between the sets, but correlations don’t seem to show any of it. There are two reasons - since we are interested only in overlaps and our flags usually have 10-20% of positive examples, most of our correlations are made up of zero values. One very simple solution is to calculate the percentage overlaps between the flags and reshape them into a correlation matrix.
 
-![Share Correlation](https://github.com/banalytics/banalytics.github.io/tree/master/images/corrPlot_allSets_Circles.PNG "Share Correlation")
+![Share Correlation](https://raw.githubusercontent.com/banalytics/banalytics.github.io/master/images/corrPlot_allSets_Circles.png.PNG "Share Correlation")
 
 The first thing you may notice is that the plot is no longer diagonally symmetrical. This is because while 100% of pageviews with ExperienceOne are ones with AdblockOn, not all AdblockOn pageviews are in ExperienceOne. This makes this chart hard to read. We wouldn’t want a business user to deal with this headache.
  
