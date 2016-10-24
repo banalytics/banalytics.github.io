@@ -43,7 +43,7 @@ As soon as you have all the combinations, you can start drawing. I have written 
 
 ## Two sets
 
-![Two sets](https://github.com/banalytics/banalytics.github.io/tree/master/images/setOverlap_twoExclusiveSets.png "Two sets")
+![Two sets](https://github.com/banalytics/banalytics.github.io/tree/master/images/setOverlap_twoExclusiveSets.PNG "Two sets")
 
 The two set visualization seems very flexible and the set sizes scale / move around based on real ratios. The interpretation seems intuitive and the labels are easy to display.
  
@@ -52,13 +52,13 @@ The two set visualization seems very flexible and the set sizes scale / move aro
  
 The second example already shows a bit of inconsistency. Both sets and their overlaps are disproportionate. The chart doesn’t reflect this though. The chart becomes more symbolic and less realistic.
 
-![Three sets](C:/Users/RoMaN/Documents/GitHub/banalytics/banalytics.github.io/images/setOverlapThreeOverlappingSets.png "Three sets")
+![Three sets](C:/Users/RoMaN/Documents/GitHub/banalytics/banalytics.github.io/images/setOverlapThreeOverlappingSets.PNG "Three sets")
 
 ## Five sets
  
 Visualizing the overlaps of five sets continues the trend of symbolic representation.
 
-![Five sets](https://github.com/banalytics/banalytics.github.io/tree/master/images/setOverlap_fiveSets.png "Five sets")
+![Five sets](https://github.com/banalytics/banalytics.github.io/tree/master/images/setOverlap_fiveSets.PNG "Five sets")
 
 ## Thoughts
  
@@ -68,13 +68,13 @@ The VennDiagram package is reliable in the way that you know what to expect. Eve
  
 The venneuler package is much easier to start with as it calculates the combinations on its own. You also don’t need to specify the number of sets to visualize. Therefore, I won’t divide this chapter based on the number of sets visualized. Let’s move on to the charts
 
-![Two sets](https://github.com/banalytics/banalytics.github.io/tree/master/images/setOverlap_twoUnevenSets.png "Two sets")
+![Two sets](https://github.com/banalytics/banalytics.github.io/tree/master/images/setOverlap_twoUnevenSets.PNG "Two sets")
 
 The first chart looks nice and clean except for the fact that we need to supply and place the set count text boxes ourselves. This is easy for smaller numbers of sets, but scaling this approach seems unnecessarily complex considering the author(s) of this package have already cracked relative object placement for the visuals.
 
 Attempting to visualize all 7 sets at once. It seems like the package handles the set spacing very well, but the label issue remains.
 
-![Seven sets](https://github.com/banalytics/banalytics.github.io/tree/master/images/setOverlap_sevenSets.png "Seven sets")
+![Seven sets](https://github.com/banalytics/banalytics.github.io/tree/master/images/setOverlap_sevenSets.PNG "Seven sets")
 
 ## Thoughts
  
@@ -85,25 +85,25 @@ The venneuler package does a very good job of spacing and scaling the sets withi
  
 corrplot offers some really cool plots for correlation matrices, so my first idea was whether we could use this for visualizing set overlaps. The first obvious downside is the fact that a correlation is between a pair of variables, which means looking into overlaps between more than two sets can be taxing. My first instinct was to simply visualize the correlations between the flags in the dataset. Please note we only visualize positive correlations since an overlap should be the positive part, negative correlations are replaced with 0s.
 
-![Basic Correlation](https://github.com/banalytics/banalytics.github.io/tree/master/images/corrPlot_allSets_Circles_upper.png "Basic Correlation")
+![Basic Correlation](https://github.com/banalytics/banalytics.github.io/tree/master/images/corrPlot_allSets_Circles_upper.PNG "Basic Correlation")
 
 If you are realizing something is gravely wrong here, you’re right. We’ve seen quite a few overlaps between the sets, but correlations don’t seem to show any of it. There are two reasons - since we are interested only in overlaps and our flags usually have 10-20% of positive examples, most of our correlations are made up of zero values. One very simple solution is to calculate the percentage overlaps between the flags and reshape them into a correlation matrix.
 
-![Share Correlation](https://github.com/banalytics/banalytics.github.io/tree/master/images/corrPlot_allSets_Circles.png "Share Correlation")
+![Share Correlation](https://github.com/banalytics/banalytics.github.io/tree/master/images/corrPlot_allSets_Circles.PNG "Share Correlation")
 
 The first thing you may notice is that the plot is no longer diagonally symmetrical. This is because while 100% of pageviews with ExperienceOne are ones with AdblockOn, not all AdblockOn pageviews are in ExperienceOne. This makes this chart hard to read. We wouldn’t want a business user to deal with this headache.
  
 I have already mentioned we are interested only in overlaps, so why not adjust the way we calculate correlations. The idea is to calculate an overlap correlation only for observations where either of the flags have a one. The reason for this is the following:
 
-![Basic Correlation](https://github.com/banalytics/banalytics.github.io/tree/master/images/classicCorrelation.png "Basic Correlation")
+![Basic Correlation](https://github.com/banalytics/banalytics.github.io/tree/master/images/classicCorrelation.PNG "Basic Correlation")
 
 Where the correct translation for the purpose of overlaps should be
 
-![Overlap Correlation](https://github.com/banalytics/banalytics.github.io/tree/master/images/overlapCorrelation.png "Overlap Correlation")
+![Overlap Correlation](https://github.com/banalytics/banalytics.github.io/tree/master/images/overlapCorrelation.PNG "Overlap Correlation")
 
 This is quite a simple adjustment that can be done via the code published on github. Please note we adjust the values to positive, since we care about the overlaps rather than the disagreements. While this may seem counterintuitive, I have tried to break the measure over and over and it seems to work reasonably well. I am happy if someone can suggest a case where it doesn’t work as intended. This results in the following chart
 
-![Overlap Correlation Output](https://github.com/banalytics/banalytics.github.io/tree/master/images/corrPlot_allSets_Circles_upperOverlap.png "Overlap Correlation Output")
+![Overlap Correlation Output](https://github.com/banalytics/banalytics.github.io/tree/master/images/corrPlot_allSets_Circles_upperOverlap.PNG "Overlap Correlation Output")
 
 which works quite well as long as you keep in mind that it the overlap correlation is a simplified measure and averages the two-way effect of 
 P(A|B)/P(B)!=P(A|B)/P(A) as mentioned previously when discussing the overlap shares.
@@ -116,7 +116,7 @@ I think that the overlap correlation approach is an interesting concept, but it 
  
 It is hard to write this paragraph without revealing the punchline, but since you’ve come this far, I’ll just say it - UpSetR is great. It includes this combo-type chart, that uses simple concepts to visualize set overlaps. It also can work with raw data. So let’s take a look, shall we?
 
-![UpsetR](https://github.com/banalytics/banalytics.github.io/tree/master/images/upsetR.png "UpsetR")
+![UpsetR](https://github.com/banalytics/banalytics.github.io/tree/master/images/upsetR.PNG "UpsetR")
 
 # Summary
  
