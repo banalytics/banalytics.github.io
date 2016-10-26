@@ -118,6 +118,35 @@ It is hard to write this paragraph without revealing the punchline, but since yo
 
 ![UpsetR](https://github.com/banalytics/banalytics.github.io/blob/master/images/upsetR.png?raw=true "UpsetR")
 
+Let's zoom in on the individual parts of the chart
+
+## Barchart for each frequency combination
+
+The barchart is quite intuitive, it starts with the most frequent combinations and trails off
+
+![Barchart UpsetR](https://github.com/banalytics/banalytics.github.io/blob/master/images/barchartUpSet.png?raw=true "Barchart UpsetR")
+
+Barchart itself is pretty basic, but there is an important element that provides context:
+
+## Legend
+
+The legend provides an intuitive display of sets each combination includes
+
+![Barchart UpsetR Legend](https://github.com/banalytics/banalytics.github.io/blob/master/images/barchartLegendUpSet.png?raw=true "Barchart UpsetR Legend")
+
+Last part of the UpSetR puzzle is a frequency for each set displayed left of the Legend
+
+## Set frequencies
+
+Set frequencies tie to the legend (frequency is always a bar left to the set name on the legend)
+
+![UpsetR Legend Frequencies](https://github.com/banalytics/banalytics.github.io/blob/master/images/legendFrequeciesUpSet.png?raw=true "UpsetR Legend Frequencies")
+
+## Thoughts
+
+While UpSet elegantly takes care of some scaling issues, as with any data visualization there is surely a point where it becomes undreadable due to too may sets being displayed. Despite this
+UpSet very efficiently provides key information about set overlaps - set frequencies, overlap frequencies and an intuitive display of which sets each combination spans.
+
 # Summary
  
 All of the three packages have their pros and cons. While there is one I consider more useful, all of them provide different approaches when it comes to the trade-off between intuitive understanding, and accurate data representation.
