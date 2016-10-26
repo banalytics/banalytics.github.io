@@ -132,7 +132,7 @@ Barchart itself is pretty basic, but there is an important element that provides
 
 The legend provides an intuitive display of sets each combination includes
 
-![Barchart UpsetR Legend](https://github.com/banalytics/banalytics.github.io/blob/master/images/barchartLegendUpSet.png?raw=true "Barchart UpsetR Legend")
+![Barchart UpsetR Legend](https://raw.githubusercontent.com/banalytics/banalytics.github.io/master/images/barchartLegendUpSet.png "Barchart UpsetR Legend")
 
 Last part of the UpSetR puzzle is a frequency for each set displayed left of the Legend
 
